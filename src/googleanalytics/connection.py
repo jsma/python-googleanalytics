@@ -46,7 +46,7 @@ class GAConnection:
             accounts = xml_tree.getiterator('{http://www.w3.org/2005/Atom}entry')
             for account in accounts:
                 account_data = {
-                    'title': account.find('{http://www.w3.org/2005/Atom}title').text,
+                    'title': account.find('{http://www.w3.org/2005/Atom}title').text.encode('utf8'),
                     'id': account.find('{http://www.w3.org/2005/Atom}id').text,
                     'updated': account.find('{http://www.w3.org/2005/Atom}updated').text
                 }
